@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 
 class Time
 {
@@ -60,21 +61,21 @@ private:
 class Spotify
 {
 public:
-    Spotify (Song songsSource[]) {
+    Spotify (std::vector<Song>& songsSource) {
         // TODO real world scenario we'd be using
         // a service here, e.g. database. It should be
         // conceptionally the same
         
+        m_songsDatabase = songsSource;
     };
 
     virtual ~Spotify () {
-        delete [] m_songsDatabase;
     };
 
     const Song* findByTitle (std::string songTitle) {
-        for (int i = 0; i < m_songsDatabaseSize; i++) {
+        for (int i = 0; i < m_songsDatabase.size(); i++) {
             if (m_songsDatabase[i].title() == songTitle) {
-                return m_songsDatabase + i;
+                return &m_songsDatabase[i];
             }
         }
 
@@ -82,8 +83,7 @@ public:
     }
 
 private:
-    Song* m_songsDatabase;
-    int m_songsDatabaseSize;
+    std::vector<Song> m_songsDatabase;
 };
 
 // TODO tests
@@ -91,13 +91,12 @@ private:
 
 int main()
 {
-    Song songsSource[] = { Song(std::string("Hurt"), std::string("Johnny Cash"), Time(10, 3)) };
+    std::vector<Song> songsSource = { Song(std::string("Hurt"), std::string("Johnny Cash"), Time(10, 3)) };
     Spotify mySpotify(songsSource);
 
     const Song* x = mySpotify.findByTitle("Hurt");
 
-    std::cout << "Hello" << std::endl;
-    std::cout << (x != nullptr ? x->title() : "No found") << std::endl;
+    std::cout << (x != nullptr ? x->author() : "No found") << std::endl;
 
     return 0;
 }
