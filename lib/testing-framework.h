@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <sstream>
+#include <cstring>
 
 using std::cout;
 using std::cerr;
@@ -13,13 +14,14 @@ static int failed_tests_counter = 0;
 class UnitTests {
     public:
         template <typename T>
-        static void AssertEq(T expected, T value) {
+        static void AssertEq(T expected, T value, std::string message="") {
             tests_counter++;
-            if (expected != value) {
-                cerr << "FAIL(" << tests_counter << "): Values mismatch!" << "\n-- expected: " << expected << "\n---- actual: " << value << endl; 
-                failed_tests_counter++;
-            } else {
+            if (expected == value) {
                 cout << "." << endl;
+            } else {
+                cerr << "FAIL(" << tests_counter << "): " << message << endl;
+                cerr << "Values mismatch!" << "\n-- expected: " << expected << "\n---- actual: " << value << endl; 
+                failed_tests_counter++;
             }
         }
 
