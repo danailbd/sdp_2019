@@ -6,12 +6,24 @@ We'll take a step back... and to the side:
 
 
 Some simple problems:
-- Queue
-    - isQueueMonotonous - the queue is in its original state in the end
-- Linked List - we can create an extension of the our LList class
-    - middleElementOfLList - given a LLinked list, find its middle element. This can be achieve with one pass through the list ( O(1*n) )
-    - reverseLinkedList - given a LLinked list, reverse its elements
-    - hasCycle - given a LList, find if there's a cycle
+### Queue
+#### isQueueMonotonous
+##### Requirements
+- the queue is in its original state in the end
+
+##### Exapmle
+A monotonous queue looks like:
+[1, 2, 3, 5]
+or
+[5, 3, 2, 1]
+And a non-monotonous queue looks like:
+[1, 2, 4, **2**]
+[1, 10, **2, 15**]
+
+### Linked List - we can create an extension of the our LList class
+#### middleElementOfLList - given a LLinked list, find its middle element. This can be achieve with one pass through the list ( O(1*n) )
+#### reverseLinkedList - given a LLinked list, reverse its elements
+#### hasCycle - given a LList, find if there's a cycle
 
 
 For those that doesn't struggle with the above, continue our *Spotify* implementation:
