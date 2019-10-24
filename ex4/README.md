@@ -14,5 +14,5 @@ Some simple problems:
     - hasCycle - given a LList, find if there's a cycle
 
 
-For those that doesn't have any struggle with the above, continue our *Spotify* implementation:
+For those that doesn't struggle with the above, continue our *Spotify* implementation:
 - Add play previous song to our "Player"
