@@ -2,7 +2,7 @@
 We'll take a step back... and to the side:
 - what do we know about Linked list? Can we implement one that is cyclic - so that `node->next` never ends?
 - what do we know about Queue and can we implement a cyclic one - one that reuses its freed up space?
-- let's try implementing both with some testing (we'll make use of [a "framework"](http://www.url.com) )
+- let's try implementing both with some testing (we'll make use of [a "framework"](https://github.com/danailbd/sdp_2019/blob/master/lib/testing-framework.h) )
 
 
 Some simple problems:
