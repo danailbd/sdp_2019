@@ -21,9 +21,12 @@ And a non-monotonous queue looks like:
 [1, 10, **2, 15**]
 
 ### Linked List - we can create an extension of the our LList class
-#### middleElementOfLList - given a LLinked list, find its middle element. This can be achieve with one pass through the list ( O(1*n) )
-#### reverseLinkedList - given a LLinked list, reverse its elements
-#### hasCycle - given a LList, find if there's a cycle
+#### middleElementOfLList
+Given a LLinked list, find its middle element. This can be achieve with one pass through the list ( O(1*n) )
+#### reverseLinkedList
+Given a LLinked list, reverse its elements
+#### hasCycle
+Given a Linked list, find if there's a cycle. Here we use the most minimalistic idea for a Linked list that is simply represented as a linked sequence of objects and has nothing to do with a class or interface
 
 
 For those that doesn't struggle with the above, continue our *Spotify* implementation:
