@@ -10,6 +10,6 @@
 
 
 ##### Sportify!
-- Add playlist
+- Add playlists
     - How should we include it in our flow?
     - How to use it with the Player?
