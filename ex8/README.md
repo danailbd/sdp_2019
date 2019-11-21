@@ -6,7 +6,7 @@
     - Ex: ((())( -> no ; (()()) -> yes
 - Reverse Polish notation parser
     - single digits
-    - 3 5 + 7 2 - * == (3 + 5) * (7 - 2)
+    - 3 5 + 7 2 - * -> 40
 
 
 
