@@ -56,11 +56,24 @@ void testLQueue() {
     UnitTests::AssertEq( true, q.empty(), "It should be hollow" );
 }
 
+void testSongsFind () {
+    std::vector<Song> songsDb = {
+        Song ("Hurt", "Ivan", Duration(200)),
+        Song ("Some", "MC Ham", Duration(200)),
+        Song ("Maybe", "MC Ham", Duration(200))
+    };
+
+    Spotify my_spotify(songsDb);
+
+    const Song* song = my_spotify.findByTitle("Hurt");
+    UnitTests::AssertEq( std::string("Hurt"), song->title(), "Expect to find existing song");
+}
 
 int main()
 {
 
-    testLQueue();
+    /* testLQueue(); */
+    testSongsFind();
 
     UnitTests::PrintTestsResult();
 
