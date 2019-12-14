@@ -32,6 +32,14 @@ void measureInsertionSort()
 
     std::vector<int> arr (SIZE);
 
+    // -- Test sorted
+
+    for (int i = 0; i < SIZE; i++) {
+        arr[i] = i;
+    }
+    std::cout << "Sorted: " << measure<std::chrono::milliseconds>::execution(insertionSort, arr) << std::endl;
+
+
     // -- Test reverse order
 
     for (int i = 0; i < SIZE; i++) {
@@ -45,13 +53,6 @@ void measureInsertionSort()
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     shuffle (arr.begin(), arr.end(), std::default_random_engine(seed));
     std::cout << "Random order: " << measure<std::chrono::milliseconds>::execution(insertionSort, arr) << std::endl;
-
-    // -- Test sorted
-
-    for (int i = 0; i < SIZE; i++) {
-        arr[i] = i;
-    }
-    std::cout << "Sorted: " << measure<std::chrono::milliseconds>::execution(insertionSort, arr) << std::endl;
 }
 
 
@@ -81,18 +82,18 @@ void print_vec(container& cont)
 
 void measureVectorVsList()
 {
-    const int ELEMENTS_NUM = 200000;
+    const int ELEMENTS_NUM = 1000000;
     std::vector<int> v;
     std::list<int> l;
 
-    std::cout << "Vector insertion time: " << measure<std::chrono::milliseconds>::execution(fillContainerBack<std::vector<int>>, v, ELEMENTS_NUM) << std::endl;
-    std::cout << "List insertion time: " << measure<std::chrono::milliseconds>::execution(fillContainerBack<std::list<int>>, l, ELEMENTS_NUM) << std::endl;
+    std::cout << "Vector insertion time END: " << measure<std::chrono::milliseconds>::execution(fillContainerBack<std::vector<int>>, v, ELEMENTS_NUM) << std::endl;
+    std::cout << "List insertion time END: " << measure<>::execution(fillContainerBack<std::list<int>>, l, ELEMENTS_NUM) << std::endl;
 
     v.clear();
     l.clear();
 
-    std::cout << "Vector insertion time Front: " << measure<std::chrono::milliseconds>::execution(fillContainerFront<std::vector<int>>, v, ELEMENTS_NUM) << std::endl;
-    std::cout << "List insertion time Front: " << measure<std::chrono::milliseconds>::execution(fillContainerFront<std::list<int>>, l, ELEMENTS_NUM) << std::endl;
+    std::cout << "Vector insertion time Front: " << measure<>::execution(fillContainerFront<std::vector<int>>, v, ELEMENTS_NUM) << std::endl;
+    std::cout << "List insertion time Front: " << measure<>::execution(fillContainerFront<std::list<int>>, l, ELEMENTS_NUM) << std::endl;
 }
 
 int main()
